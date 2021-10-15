@@ -1,7 +1,7 @@
 body{
 	font-size: 15px;
 	font-family: Source Sans Pro;
-    background: #B2D3BE;
+    background: #000000;
 }
 
 .box {
@@ -11,13 +11,13 @@ body{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background: #889E81;
+	background: #CCCCCC;
 	border-radius: 24px;
 	text-align: center;
 }
 
 .box h1 {
-	color: #52734D;
+	color: #000000;
 	text-transform: uppercase;
 	font-weight: 500;
 }
@@ -33,18 +33,18 @@ body{
 	display: block;
 	margin: 20px auto;
 	text-align: center;
-	border: 2px solid #698474;
+	border: 2px solid #666666;
 	padding: 14px 10px;
 	width: 200px;
 	outline: none;
-	color: white;
+	color: #003399;
 	border-radius: 24px;
 	transition: 0.25s;
 }
 
 .box input[type="email"]:focus,.box input[type="password"]:focus{
 	width: 280px;
-	border-color: #BAC7A7;
+	border-color: #666666;
 }
 
 .box input[type="submit"] {
@@ -53,17 +53,17 @@ body{
 	display: block;
 	margin: 20px auto;
 	text-align: center;
-	border: 2px solid #BAC7A7;
+	border: 2px solid #000000;
 	padding: 14px 40px;
 	outline: none;
-	color: #5E6F64;
+	color: #000000;
 	border-radius: 24px;
 	transition: 0.25s;
 	cursor: pointer;
 }
 
 .box input[type="submit"]:hover {
-	background: #B5CDA3;
+	background: #6699CC;
 }
 
 .box a{
@@ -71,5 +71,5 @@ body{
 }
 
 .box a:hover{
-    color: #B5CDA3;
+    color: #0099CC;
 }

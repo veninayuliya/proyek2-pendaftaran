@@ -7,7 +7,7 @@ include '../koneksi.php';
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Welcome</title>
+	<title>Login</title>
 	<link rel="stylesheet" type="text/css" href="../css/login.css">
 </head>
 <body>
@@ -16,7 +16,7 @@ include '../koneksi.php';
         <input type="email" class="" name="email" size="40" placeholder="Masukkan email">
 		<input type="password" class="" name="password" size="40" placeholder="Masukkan password">
 		<input type="submit" name="login" value="Login"><br>
-        <p>Belum punya akun? <a href="signup.php" class="daftar">Daftar</a></p>
+        <p>Belum punya akun? <a href="registrasi.php" class="daftar">Daftar</a></p>
     </form>
 	<div>
 		<?php

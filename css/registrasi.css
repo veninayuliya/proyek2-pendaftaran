@@ -1,0 +1,73 @@
+body{
+	font-size: 15px;
+	font-family: sans-serif;
+	background: #CCCCCC;
+}
+
+h2{
+	font-family: sans-serif;
+	font-size: 22px;
+	color:white;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 25px;
+}
+
+.box{
+	width: 500px;
+	height: 520px;
+	background: black;
+	color: white;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	opacity: 90%;
+}
+
+.box p{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+.box input{
+	width: 120%;
+	margin-bottom: 20px;
+}
+
+.box input[type="text"], input[type="email"], input[type="password"], textarea
+{
+	border: none;
+	border-bottom: 1px solid white;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: white;
+	font-size: 16px;
+}
+
+.box input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	background: #6699CC;
+	color: white;
+	font-size: 18px;
+	border-radius: 20px;
+}
+
+.box input[type="submit"]:hover
+{
+	cursor: pointer;
+	background: rgb(65, 99, 109);
+	color: white;
+}
+
+div form{
+	margin: -30px 80px 0px -3px;
+	padding: 20px;
+	padding-top: -500px;
+}
+
