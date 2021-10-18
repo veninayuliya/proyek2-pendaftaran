@@ -10,7 +10,6 @@ include '../koneksi.php';
 	<title>Registrasi</title>
 </head>
 <body>
-
 	<div class="box">
 			<h2>Registrasi</h2>
 			<form method="post">
@@ -48,12 +47,8 @@ include '../koneksi.php';
 					echo "<script>alert('Registrasi SUKSES. Silahkan login');</script>";
 					echo "<script>location='login.php';</script>";
 				}
-
 			}
-
 			?>
-
 		</div>
-
 </body>
 </html>

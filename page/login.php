@@ -40,6 +40,9 @@ include '../koneksi.php';
 				if($akun['roles'] == "Administrator"){
 					echo "<script>alert('Login Admin berhasil!')</script>";
 					echo "<script>location='home-admin.php';</script>";
+				}else if($akun['roles'] == "Panitia_PSB"){
+					echo "<script>alert('Login Panitia berhasil!')</script>";
+					echo "<script>location='home-panitia.php';</script>";
 				}else{
 					echo "<script>alert('Selamat datang')</script>";
 					echo "<script>location='home.php';</script>";
