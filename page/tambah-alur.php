@@ -29,16 +29,16 @@ include '../koneksi.php';
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="../page/home.php">Home</a>
+            <a class="nav-link" href="home-panitia.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="../page/alur_pendaftaran.php">Kelola Alur</a>
+            <a class="nav-link active" href="alur_pendaftaran.php">Kelola Alur</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="../page/penerimaan.php">Penerimaan</a>
+              <a class="nav-link" href="penerimaan.php">Penerimaan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../logout.php">Logout</a>
+            <a class="nav-link" href="logout.php">Logout</a>
           </li>
         </ul>
       </div>
@@ -71,8 +71,8 @@ include '../koneksi.php';
 	{
 		mysqli_query($db,"INSERT INTO alur-pendaftaran (nama_kegiatan, pelaksanaan, keterangan) 
 		VALUES('$_POST[nama_kegiatan]','$_POST[pelaksanaan]','$_POST[keterangan]')");	
-		echo "<script>alert('alur pendaftaran berhasil ditambahkan';
-    window.location='home-panitia.php');</script>";
+		echo "<script>alert('alur pendaftaran berhasil ditambahkan');</script>";
+    echo "<script>location='home-panitia.php');</script>";
 	}
 	?>
     </div>
