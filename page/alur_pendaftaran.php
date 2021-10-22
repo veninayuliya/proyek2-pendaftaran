@@ -25,16 +25,16 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../page/home.php">Home</a>
+                        <a class="nav-link" href="home-panitia.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../page/alur_pendaftaran.php">Kelola Alur</a>
+                        <a class="nav-link active" href="alur_pendaftaran.php">Kelola Alur</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../page/penerimaan.php">Penerimaan</a>
+                        <a class="nav-link" href="penerimaan.php">Penerimaan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../logout.php">Logout</a>
+                        <a class="nav-link" href="logout.php">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -78,16 +78,10 @@
                     <td><?php echo $d['keterangan']; ?></td>
                     <td>
                         <a href="edit-alur.php?id_alur=<?php echo $d['id_alur']; ?>" class="btn btn-warning">Edit</a>
-                        <a href="#myModal" class="btn btn-danger" onclick="set_url('http://suckittrees.com');">Hapus</a>
-                        <script>
-                            function set_url(url) {
-                                $('#btn-yes').attr('href',url);
-                            }
-                        </script>
+                        <a href="delete-alur.php?id_alur<?php echo $d['id_alur']; ?>" class="btn btn-danger">Hapus</a>
                     </td>
                 </tr>
                 <?php
-                if(isset($_POST["hapus"])){}
                 }
                 ?>
                 </tbody>

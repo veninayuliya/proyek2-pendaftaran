@@ -8,6 +8,6 @@
 </head>
 <body>
     <h1>Ini adalah halaman home user</h1><br><br>
-    <a href="../logout.php">Logout</a>
+    <a href="logout.php">Logout</a>
 </body>
 </html>

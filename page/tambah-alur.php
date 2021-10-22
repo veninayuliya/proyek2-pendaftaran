@@ -71,7 +71,8 @@ include '../koneksi.php';
 	{
 		mysqli_query($db,"INSERT INTO alur-pendaftaran (nama_kegiatan, pelaksanaan, keterangan) 
 		VALUES('$_POST[nama_kegiatan]','$_POST[pelaksanaan]','$_POST[keterangan]')");	
-		echo "<script>alert('alur pendaftaran berhasil ditambahkan';window.location='../page/home-panitia.php');</script>";
+		echo "<script>alert('alur pendaftaran berhasil ditambahkan';
+    window.location='home-panitia.php');</script>";
 	}
 	?>
     </div>
