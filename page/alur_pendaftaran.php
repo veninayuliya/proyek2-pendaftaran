@@ -48,8 +48,8 @@
                 <div class="card-header text-center">
                     <h3>Alur Pendaftaran</h3>
                 </div>
-                <a href="../page/tambah-alur.php" class="btn btn-primary">Tambah Alur</a>
-                <a href="../page/laporan-alur.php" class="btn btn-primary" target="_blank">Export to PDF</a>
+                <a href="tambah-alur.php" class="btn btn-primary">Tambah Alur</a>
+                <a href="laporan-alur.php" class="btn btn-primary" target="_blank">Export to PDF</a>
                 </br></br>
             </div>
             <!-- Title -->
@@ -78,7 +78,7 @@
                     <td><?php echo $d['keterangan']; ?></td>
                     <td>
                         <a href="edit-alur.php?id_alur=<?php echo $d['id_alur']; ?>" class="btn btn-warning">Edit</a>
-                        <a href="delete-alur.php?id_alur<?php echo $d['id_alur']; ?>" class="btn btn-danger">Hapus</a>
+                        <a href="hapus-alur.php?id_alur=<?php echo $d['id_alur']; ?>" class="btn btn-danger">Hapus</a>
                     </td>
                 </tr>
                 <?php
@@ -90,7 +90,6 @@
             </div>
         </div>
       </div>
-      </div>
+    </div>
 </body>
-
 </html>

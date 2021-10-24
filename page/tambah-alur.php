@@ -54,7 +54,7 @@ include '../koneksi.php';
                 <input type="text" name="nama_kegiatan" placeholder="Masukkan nama kegiatan" class="form-control" required><br>
             </div>
             <div class="form-group">
-                <label>Waktu Pelaksanaan</label><br>
+                <label>Tanggal Pelaksanaan</label><br>
                 <input type="text" name="pelaksanaan" placeholder="Masukkan waktu pelaksanaan (dd-mm-yyyyy)" class="form-control" required><br>
             </div>
             <div class="form-group">
@@ -63,15 +63,15 @@ include '../koneksi.php';
                 </textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" name="submit">Submit</button><br><br>
+            <button type="submit" class="btn btn-primary" name="tambah">Tambah</button><br><br>
         </form>
 
     <?php
-	if(isset(($_POST['submit'])))
+	if(isset(($_POST['tambah'])))
 	{
 		mysqli_query($db,"INSERT INTO alur-pendaftaran (nama_kegiatan, pelaksanaan, keterangan) 
 		VALUES('$_POST[nama_kegiatan]','$_POST[pelaksanaan]','$_POST[keterangan]')");	
-		echo "<script>alert('alur pendaftaran berhasil ditambahkan');</script>";
+		echo "<script>alert('Alur pendaftaran berhasil ditambahkan');</script>";
     echo "<script>location='home-panitia.php');</script>";
 	}
 	?>
