@@ -68,7 +68,7 @@
                 <?php
                 include '../koneksi.php';
                 $no=1;
-                $data=mysqli_query($db,"SELECT * FROM alur-pendaftaran");
+                $data=mysqli_query($koneksi,"SELECT * FROM alur-pendaftaran");
                 while($d=mysqli_fetch_array($data)){
                 ?>
                 <tr>

@@ -48,7 +48,7 @@ include '../koneksi.php';
   <div class="col-md-6">
     <h3 class="my-4">Alur Pendaftaran Siswa Baru SDN Mojotengah 2</h3>
     <div class="container">
-	<form method="post">
+	  <form method="POST" enctype="multipart/form-data" action="../page/proses-tambah-alur.php">
             <div class="form-grup">
                 <label>Nama Kegiatan</label><br>
                 <input type="text" name="nama_kegiatan" placeholder="Masukkan nama kegiatan" class="form-control" required><br>
@@ -63,18 +63,9 @@ include '../koneksi.php';
                 </textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" name="tambah">Tambah</button><br><br>
+            <button type="submit" class="btn btn-primary" name="submit">Tambah</button><br><br>
         </form>
 
-    <?php
-	if(isset(($_POST['tambah'])))
-	{
-		mysqli_query($db,"INSERT INTO alur-pendaftaran (nama_kegiatan, pelaksanaan, keterangan) 
-		VALUES('$_POST[nama_kegiatan]','$_POST[pelaksanaan]','$_POST[keterangan]')");	
-		echo "<script>alert('Alur pendaftaran berhasil ditambahkan');</script>";
-    echo "<script>location='home-panitia.php');</script>";
-	}
-	?>
     </div>
   </div>
   <footer class="py-5 bg-dark">

@@ -1,6 +1,6 @@
 <?php
-session_start();
-include '../koneksi.php';
+    session_start();
+    include '../koneksi.php';
 ?>
 
 <!DOCTYPE html>
@@ -49,22 +49,22 @@ include '../koneksi.php';
   <div class="col-md-6">
     <h3 class="my-4">Formulir Pendaftaran Siswa Baru SDN Mojotengah 2</h3>
     <div class="container">
-	<form method="post">
+	<form method="POST" enctype="multipart/form-data" action="../page/proses-daftar.php">
             <div class="form-grup">
                 <label>Nama Lengkap</label><br>
                 <input type="text" name="nama_lengkap" placeholder="Masukkan nama lengkap" class="form-control" required><br>
-            </div>
+            </div><br>
             <div class="form-group">
                 <label>Foto 3x4 Background Merah</label><br>
                 <input type="file" name="foto" required>
-            </div>
+            </div><br>
             <div class="form-group">
                 <label>Jenis Kelamin</label><br>
                 <select class="form-control" name="jenis_kelamin">
                     <option value="Laki-laki">Laki-laki</option>
                     <option value="Perempuan">Perempuan</option>
                 </select>
-            </div>
+            </div><br>
             <div class="form-group">
                 <label>Tempat, Tanggal Lahir</label><br>
                 <input type="text" name="ttl" placeholder="Tempat, (dd-mm-yyyy)" class="form-control" required><br>
@@ -97,7 +97,7 @@ include '../koneksi.php';
                 <textarea name="alamat" placeholder="Masukkan alamat" style="border-radius:5px;width:615px;height:200px;" required>
                 </textarea>
                 <!-- <input type="text" name="alamat" placeholder="Masukkan alamat" class="form-control" required><br> -->
-            </div>
+            </div><br>
             <div class="form-group">
                 <label>No. Telepon</label><br>
                 <input type="text" name="telepon" placeholder="Masukkan nomor telepon yang dapat dihubungi" class="form-control" required><br>
@@ -144,7 +144,7 @@ include '../koneksi.php';
                     <option value="s2">S2</option>
                     <option value="s3">S3</option>
                 </select>
-            </div>
+            </div><br>
             <div class="form-group">
                 <label>Nama Ibu</label><br>
                 <input type="text" name="nama_ibu" placeholder="Masukkan nama ibu kandung" class="form-control" required><br>
@@ -176,38 +176,6 @@ include '../koneksi.php';
             <button type="submit" class="btn btn-primary" name="submit">Submit</button><br><br>
         </form>
 
-	<?php
-	if(isset(($_POST['submit'])))
-	{
-        $ekstensi_diperbolehkan = array('png','jpg');
-        $foto_siswa = $_FILES['foto']['name'];
-        $x = explode('.', $foto_siswa);
-        $ekstensi = strtolower(end($x));
-        $file_tmp = $_FILES['foto']['tmp_name'];   
-        $angka_acak     = rand(1,999);
-        $nama_foto_baru = $angka_acak.'-'.$foto_siswa;
-		$ukuran	= $_FILES['file']['size'];
-
-        if(in_array($ekstensi, $ekstensi_diperbolehkan) == true) {
-            move_uploaded_file($file_tmp, 'img/'.$foto_siswa);
-            mysqli_query($db,"INSERT INTO pendaftaran (
-                nama_lengkap, foto, jenis_kelamin, ttl, nik, no_akta_lahir, agama, sekolah_asal,
-                alamat, telepon, tb_siswa, bb_siswa, jml_saudara, jarak, nama_ayah, nik_ayah, pekerjaan_ayah,
-                pend_ayah, nama_ibu, nik_ibu, pekerjaan_ibu, pend_ibu
-                ) 
-		    VALUES(
-                '$_POST[nama_lengkap]', '$foto_siswa', '$_POST[jenis_kelamin]', '$_POST[ttl]', '$_POST[nik]',
-                '$_POST[no_akta_lahir]', '$_POST[agama]', '$_POST[sekolah_asal]', '$_POST[alamat]', '$_POST[telepon]',
-                '$_POST[tb_siswa]', '$_POST[bb_siswa]', '$_POST[jml_saudara]', '$_POST[jarak]', '$_POST[nama_ayah]',
-                '$_POST[nik_ayah]', '$_POST[pekerjaan_ayah]', '$_POST[pend_ayah]', '$_POST[nama_ibu]', '$_POST[nik_ibu]',
-                '$_POST[pekerjaan_ibu]', '$_POST[pend_ibu]',
-                )");	
-		    echo "<script>alert('Berhasil melakukan pendaftaran';window.location='../page/formulir.php';);</script>";
-        } else {     
-            echo "<script>alert('Image Extension must be .jpg/.png');window.location='../page/pendaftaran.php';</script>";
-        }
-	}
-	?>
     </div>
   </div>
 
