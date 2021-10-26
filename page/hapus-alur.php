@@ -1,8 +1,13 @@
 <?php
 include '../koneksi.php';
 
-mysqli_query($db,"DELETE FROM alur-pendaftaran WHERE id_alur='$_GET[id_alur]'");
-
-echo "<script>alert('Data alur pendaftaran terhapus');</script>";
-echo "<script>location='../page/alur_pendaftaran.php';</script>";
-?>
+$id_alur = $_GET['id_alur'];
+$query = "DELETE FROM alur-pendaftaran WHERE id_alur='$id_alur'";
+$result = mysqli_query($koneksi, $query);
+if(!$result) {
+    die ("Error deleting data. ".mysqli_errno($koneksi).
+    " - ".mysqli_error($koneksi));
+} else {
+    echo "<script>alert('Data alur pendaftaran terhapus');window.location='../page/alur-pendaftaran.php;'</script>";    
+}
+mysqli_close($koneksi);
