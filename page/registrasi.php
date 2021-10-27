@@ -33,7 +33,7 @@ include '../koneksi.php';
 				$roles = "User";
 
 				//validasi
-				$data = mysqli_query($db,"SELECT * FROM users WHERE email_user='$email'");
+				$data = mysqli_query($koneksi,"SELECT * FROM users WHERE email_user='$email'");
 				$sama = mysqli_num_rows($data);
 				if($sama==1)
 				{

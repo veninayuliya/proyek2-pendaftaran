@@ -26,7 +26,7 @@ include '../koneksi.php';
 			$email = $_POST["email"];
 			$password = $_POST["password"];
 			//lakukan query mengecek akun di tabel user di db
-			$data = mysqli_query($db,"SELECT * FROM users WHERE email_user='$email'
+			$data = mysqli_query($koneksi,"SELECT * FROM users WHERE email_user='$email'
 				AND password_user ='$password'");
 
 			//ngitung akun yg terambil
