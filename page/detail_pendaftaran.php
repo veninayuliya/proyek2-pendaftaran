@@ -143,7 +143,7 @@ include '../koneksi.php';
                             <h4>LAIN-LAIN</h4>
                             <div class="form-group">
                                 <label>Foto 3x4</label><br>
-                                <input type="file" name="foto" class="form-control" readonly value="<?php echo $d['foto'];?>"><br>
+                                <img src="../img/<?php echo $d['foto'];?>">
                             </div>
                             <div class="form-group">
                                 <label>Status</label><br>

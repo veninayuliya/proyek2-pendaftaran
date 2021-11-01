@@ -58,19 +58,20 @@ include '../koneksi.php';
 	  <form method="POST" enctype="multipart/form-data">
             <div class="form-grup">
                 <label>Nama Siswa</label><br>
-                <input type="text" name="nama_lengkap" class="form-control" required value="<?php echo $d['nama_lengkap'];?>"><br>
+                <input type="text" name="nama_lengkap" class="form-control" readonly value="<?php echo $d['nama_lengkap'];?>"><br>
             </div>
             <div class="form-group">
                 <label>TTL</label><br>
-                <input type="text" name="ttl" class="form-control" required value="<?php echo $d['ttl'];?>"><br>
+                <input type="text" name="ttl" class="form-control" readonly value="<?php echo $d['ttl'];?>"><br>
             </div>
             <div class="form-group">
                 <label>Asal Sekolah</label><br>
-                <input type="text" name="sekolah_asal" class="form-control" required value="<?php echo $d['sekolah_asal'];?>"><br>
+                <input type="text" name="sekolah_asal" class="form-control" readonly value="<?php echo $d['sekolah_asal'];?>"><br>
             </div>
             <div class="form-group">
                 <label>Status</label><br>
-                <select class="form-control" name="status" value="<?php echo $d['status'];?>">
+                <select class="form-control" name="status">
+                    <option value="<?php echo $d['status'];?>"><?php echo $d['status'];?></option>
                     <option value="Tidak Diterima">Tidak Diterima</option>
                     <option value="Diterima">Diterima</option>
                 </select>
@@ -82,8 +83,7 @@ include '../koneksi.php';
         <?php
         if(isset(($_POST['update'])))
         {
-            mysqli_query($koneksi,"UPDATE pendaftaran SET nama_lengkap=
-            '$_POST[nama_lengkap]',ttl='$_POST[ttl]',sekolah_asal='$_POST[sekolah_asal]',status='$_POST[status]'
+            mysqli_query($koneksi,"UPDATE pendaftaran SET status='$_POST[status]'
             WHERE id_pendaftaran='$_GET[id_pendaftaran]'");	
 
             echo "<script>alert('Data penerimaan berhasil diperbaharui!');window.location='../page/penerimaan-admin.php';</script>";

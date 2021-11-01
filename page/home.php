@@ -36,6 +36,9 @@
             <a class="nav-link" href="pendaftaran.php">Pendaftaran</a>
           </li> 
           <li class="nav-item">
+            <a class="nav-link" href="penerimaan.php">Penerimaan</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="logout.php">Logout</a>
           </li> 
         </ul>
@@ -71,7 +74,7 @@
 
   <div class="container">
 
-    <h1 class="my-4">Visi dan Misi</h1>
+    <h1 class="my-4" style="text-align:center;">Visi dan Misi</h1>
       <h3>Visi</h3>
       <p>“Terwujudnya siswa  yang  Bertaqwa, Santun, Terampil,  Berkarakter, dan Berprestasi”</p><br>
       <h3>Misi</h3>
@@ -81,7 +84,47 @@
       <p>4. Membentuk pribadi yag berkarakter dan tangguh</p>
       <p>5. Memperoleh  prestasi akademik dan non akademik</p>
       <p>6. Memupuk bakat dan minat melalui kegiatan ekstrakurikuler</p>
-      <p>7. Meningkatkan mutu pembelajaran PAKEM – SAINTIFIC</p><br>
+      <p>7. Meningkatkan mutu pembelajaran PAKEM – SAINTIFIC</p><br><br>
+
+      <div class="col-lg-12"> <br>
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Alur Pendaftaran</h3>
+                </div></br></br>
+            </div>
+            <!-- Title -->
+            <div class="card body">
+                <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Kegiatan</th>
+                        <th>Pelaksanaan</th>
+                        <th>Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                include '../koneksi.php';
+                $no=1;
+                $sql = "SELECT * FROM alur_pendaftaran;";
+                $data=mysqli_query($koneksi,$sql) or die(mysqli_error($koneksi));
+                while($d=mysqli_fetch_array($data)){
+                ?>
+                <tr>
+                    <td><?php echo $no++; ?></td>
+                    <td><?php echo $d['nama_kegiatan']; ?></td>
+                    <td><?php echo $d['pelaksanaan']; ?></td>
+                    <td><?php echo $d['keterangan']; ?></td>
+                </tr>
+                <?php
+                }
+                ?>
+                </tbody>
+                </table>
+                </br></br>
+            </div>
+        </div><br><br>
     <!-- /.row -->
     <div class="row">
       <div class="col-lg-6">

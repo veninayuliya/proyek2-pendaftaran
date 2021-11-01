@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Kelola Alur Pendaftaran</title>
+  <title>Hasil Penerimaan</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -28,10 +28,10 @@
                         <a class="nav-link" href="home-panitia.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="alur_pendaftaran.php">Kelola Alur</a>
+                        <a class="nav-link" href="alur_pendaftaran.php">Kelola Alur</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="penerimaan-panitia.php">Penerimaan</a>
+                        <a class="nav-link active" href="penerimaan-panitia.php">Penerimaan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Logout</a>
@@ -42,14 +42,12 @@
     </nav>
 
     <div class="container-fluid">
-        <h1 class="mt-4">Kelola Alur Pendaftaran</h1><br>
+        <h1 class="mt-4" style="text-align:center;">Hasil Penerimaan Siswa Baru SDN Mojotengah 2</h1><br>
         <div class="col-lg-12"> <br>
             <div class="card">
                 <div class="card-header text-center">
-                    <h3>Alur Pendaftaran</h3>
+                    <h3>Hasil Penerimaan</h3>
                 </div>
-                <a href="tambah-alur.php" class="btn btn-primary">Tambah Alur</a>
-                <a href="laporan-alur.php" class="btn btn-primary" target="_blank">Export to PDF</a>
                 </br></br>
             </div>
             <!-- Title -->
@@ -58,47 +56,27 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Kegiatan</th>
-                        <th>Pelaksanaan</th>
-                        <th>Keterangan</th>
-                        <th>Aksi</th>
+                        <th>Nama Siswa</th>
+                        <th>TTL</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Asal Sekolah</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                 <?php
                 include '../koneksi.php';
                 $no=1;
-                $sql = "SELECT * FROM alur_pendaftaran;";
-                $data=mysqli_query($koneksi,$sql) or die(mysqli_error($koneksi));
+                $data=mysqli_query($koneksi,"SELECT * FROM pendaftaran");
                 while($d=mysqli_fetch_array($data)){
                 ?>
                 <tr>
                     <td><?php echo $no++; ?></td>
-                    <td><?php echo $d['nama_kegiatan']; ?></td>
-                    <td><?php echo $d['pelaksanaan']; ?></td>
-                    <td><?php echo $d['keterangan']; ?></td>
-                    <td>
-                        <a href="edit-alur.php?id_alur=<?php echo $d['id_alur']; ?>" class="btn btn-warning">Edit</a>
-                        <a href="hapus-alur.php?id_alur=<?php echo $d['id_alur']; ?>" class="btn btn-danger" onclick="javascript: return confirm('Anda yakin akan menghapus ?')">Hapus</a>
-                        <script>
-                            $(".hapus").click(function () {
-                                var jawab = confirm("Press a button!");
-                                if (jawab === true) {
-                                    var hapus = false;
-                                    if (!hapus) {
-                                        hapus = true;
-                                        $.post('hapus-data.php', {id: $(this).attr('nomor_surat')},
-                                        function (data) {
-                                            alert(data);
-                                        });
-                                        hapus = false;
-                                    }
-                                } else {
-                                    return false;
-                                }
-                            });
-                        </script>
-                    </td>
+                    <td><?php echo $d['nama_lengkap']; ?></td>
+                    <td><?php echo $d['ttl']; ?></td>
+                    <td><?php echo $d['jenis_kelamin']; ?></td>
+                    <td><?php echo $d['sekolah_asal']; ?></td>
+                    <td><?php echo $d['status']; ?></td>
                 </tr>
                 <?php
                 }

@@ -25,16 +25,16 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="home-panitia.php">Home</a>
+                        <a class="nav-link" href="../page/home.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="alur_pendaftaran.php">Kelola Alur</a>
+                        <a class="nav-link" href="../page/pendaftaran.php">Pendaftaran</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="penerimaan.php">Penerimaan</a>
+                        <a class="nav-link active" href="../page/penerimaan.php">Penerimaan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="logout.php">Logout</a>
+                        <a class="nav-link" href="../logout.php">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -42,7 +42,7 @@
     </nav>
 
     <div class="container-fluid">
-        <h1 class="mt-4">Hasil Penerimaan Siswa Baru SDN Mojotengah 2</h1><br>
+        <h1 class="mt-4" style="text-align:center;">Hasil Penerimaan Siswa Baru SDN Mojotengah 2</h1><br>
         <div class="col-lg-12"> <br>
             <div class="card">
                 <div class="card-header text-center">

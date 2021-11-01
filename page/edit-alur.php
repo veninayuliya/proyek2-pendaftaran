@@ -68,14 +68,14 @@ include '../koneksi.php';
                 <input type="text" name="keterangan" class="form-control" required value="<?php echo $d['keterangan'];?>">
             </div>
             
-            <a href="alur-pendaftaran.php" class="btn btn-default">Kembali</a>
+            <a href="alur_pendaftaran.php" class="btn btn-default">Kembali</a>
             <button type="submit" class="btn btn-primary" name="update">Update</button><br><br>
         </form>
         <?php
         if(isset(($_POST['update'])))
         {
-            mysqli_query($koneksi,"UPDATE alur_pendaftaran SET nama_kegiatan='$_POST[nama_kegiatan]',pelaksanaan='$_POST[pelaksanaan]',keterangan='$_POST[keterangan]' WHERE id_alur='$GET[id_alur]'");	
-
+            mysqli_query($koneksi, "UPDATE alur_pendaftaran SET nama_kegiatan='$_POST[nama_kegiatan]', pelaksanaan='$_POST[pelaksanaan]', keterangan='$_POST[keterangan]'
+            WHERE id_alur='$_POST[id_alur]'");
             echo "<script>alert('Data telah diupdate');</script>";
             echo "<script>location='alur_pendaftaran.php';</script>";
         }

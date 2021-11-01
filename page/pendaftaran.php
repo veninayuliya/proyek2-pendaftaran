@@ -39,7 +39,7 @@
               <a class="nav-link" href="../page/penerimaan.php">Penerimaan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../logout.php">Logout</a>
+            <a class="nav-link" href="../page/logout.php">Logout</a>
           </li>
         </ul>
       </div>
@@ -50,6 +50,7 @@
     <h3 class="my-4">Formulir Pendaftaran Siswa Baru SDN Mojotengah 2</h3>
     <div class="container">
 	<form method="POST" enctype="multipart/form-data" action="../page/proses-daftar.php">
+            <h4>IDENTITAS SISWA</h4>
             <div class="form-grup">
                 <label>Nama Lengkap</label><br>
                 <input type="text" name="nama_lengkap" placeholder="Masukkan nama lengkap" class="form-control" required><br>
@@ -70,11 +71,11 @@
                 <input type="text" name="ttl" placeholder="Tempat, (dd-mm-yyyy)" class="form-control" required><br>
             </div>
             <div class="form-group">
-                <label>NIK</label><br>
+                <label>Nomor Induk Kependudukan</label><br>
                 <input type="text" name="nik" placeholder="Masukkan Nomor Induk Kependudukan" class="form-control" required><br>
             </div>
             <div class="form-group">
-                <label>No. Akta Kelahiran</label><br>
+                <label>Nomor Akta Kelahiran</label><br>
                 <input type="text" name="no_akta_lahir" placeholder="Masukkan nomor akta kelahiran" class="form-control" required><br>
             </div>
             <div class="form-group">
@@ -96,18 +97,18 @@
                 <label>Alamat</label><br>
                 <textarea name="alamat" placeholder="Masukkan alamat" style="border-radius:5px;width:615px;height:200px;" required>
                 </textarea>
-                <!-- <input type="text" name="alamat" placeholder="Masukkan alamat" class="form-control" required><br> -->
             </div><br>
             <div class="form-group">
                 <label>No. Telepon</label><br>
                 <input type="text" name="telepon" placeholder="Masukkan nomor telepon yang dapat dihubungi" class="form-control" required><br>
-            </div>
+            </div><br>
+            <h4>DATA PERIODIK</h4>
             <div class="form-group">
-                <label>Tinggi Badan</label><br>
+                <label>Tinggi Badan (cm)</label><br>
                 <input type="number" name="tb_siswa" min="100" max="170" step="1" placeholder="Masukkan tinggi badan (cm)" class="form-control" required><br>
             </div>
             <div class="form-group">
-                <label>Berat Badan</label><br>
+                <label>Berat Badan (kg)</label><br>
                 <input type="number" name="bb_siswa" min="25" max="250" step="1" placeholder="Masukkan berat badan (kg)" class="form-control" required><br>
             </div>
             <div class="form-group">
@@ -115,9 +116,10 @@
                 <input type="number" name="jml_saudara" min="0" max="20" step="1" placeholder="Masukkan jumlah saudara kandung" class="form-control" required><br>
             </div>
             <div class="form-group">
-                <label>Jarak Rumah</label><br>
+                <label>Jarak Rumah ke Sekolah (km)</label><br>
                 <input type="number" name="jarak" min="0" max="30" step="1" placeholder="Masukkan jarak rumah ke sekolah (km)" class="form-control" required><br>
-            </div>
+            </div><br>
+            <h4>DATA AYAH KANDUNG</h4>
             <div class="form-group">
                 <label>Nama Ayah</label><br>
                 <input type="text" name="nama_ayah" placeholder="Masukkan nama ayah kandung" class="form-control" required><br>
@@ -145,6 +147,7 @@
                     <option value="s3">S3</option>
                 </select>
             </div><br>
+            <h4>DATA IBU KANDUNG</h4>
             <div class="form-group">
                 <label>Nama Ibu</label><br>
                 <input type="text" name="nama_ibu" placeholder="Masukkan nama ibu kandung" class="form-control" required><br>
