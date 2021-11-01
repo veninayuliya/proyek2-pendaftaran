@@ -1,14 +1,60 @@
+<?php
+session_start();
+include 'koneksi.php';
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+	<meta charset="utf-8">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
-    <h1>Selamat Datang di Website Pendaftaran SDN Mojotengah 2</h1><br><br>
-    <a href="page/login.php">Login</a>
-    
+    <form method="post" class="box">
+        <h1>LOGIN</h1>
+        <input type="email" class="" name="email" size="40" placeholder="Masukkan email">
+		<input type="password" class="" name="password" size="40" placeholder="Masukkan password">
+		<input type="submit" name="login" value="Login"><br>
+        <p>Belum punya akun? <a href="page/registrasi.php" class="daftar">Daftar</a></p>
+    </form>
+	<div>
+		<?php
+		//jika ada tombol login 
+		if(isset($_POST["login"]))
+		{
+			$email = $_POST["email"];
+			$password = $_POST["password"];
+			//lakukan query mengecek akun di tabel user di db
+			$data = mysqli_query($koneksi,"SELECT * FROM users WHERE email_user='$email'
+				AND password_user ='$password'");
+
+			//ngitung akun yg terambil
+			$akunbenar = mysqli_num_rows($data);
+
+			//jika 1 akun cocok maka login
+			if($akunbenar==1)
+			{
+				//anda login
+				$akun = mysqli_fetch_assoc($data);
+				if($akun['roles'] == "Administrator"){
+					echo "<script>alert('Login Admin berhasil!')</script>";
+					echo "<script>location='page/home-admin.php';</script>";
+				}else if($akun['roles'] == "Panitia_PSB"){
+					echo "<script>alert('Login Panitia berhasil!')</script>";
+					echo "<script>location='page/home-panitia.php';</script>";
+				}else{
+					echo "<script>alert('Selamat datang')</script>";
+					echo "<script>location='page/home.php';</script>";
+				}
+			}
+			else
+			{
+				//anda gagal login
+				echo "<script>alert('Login failed! Please try again')</script>";
+				echo "<script>location='index.php';</script>";
+			}
+		}
+		?>
 </body>
 </html>

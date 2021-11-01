@@ -74,8 +74,9 @@ include '../koneksi.php';
                     <option value="Tidak Diterima">Tidak Diterima</option>
                     <option value="Diterima">Diterima</option>
                 </select>
-            </div>
+            </div><br>
 
+            <a href="penerimaan-admin.php" class="btn btn-default">Kembali</a>
             <button type="submit" class="btn btn-primary" name="update">Update</button><br><br>
         </form>
         <?php

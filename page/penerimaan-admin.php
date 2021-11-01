@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Hasil Penerimaan</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="../css/modern-business.css" rel="stylesheet">
-</head>
-
-<body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" style="color:white;">SDN MOJOTENGAH 2</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="home-panitia.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="alur_pendaftaran.php">Kelola Alur</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="penerimaan-admin.php">Penerimaan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="logout.php">Logout</a>
-                    </li>
-                </ul>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>E-Arsip</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3">Menu</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <a class="nav-link active" href="penerimaan-admin.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-star"></i></div>
+                                Data Penerimaan
+                                <hr>
+                            </a>
+                            <a class="nav-link" href="laporan-user.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-about"></i></div>
+                                Data User
+                                <hr>
+                            </a>
+                            <a class="nav-link" href="logout.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-arrow-alt-circle-left"></i></div>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </nav>
             </div>
-        </div>
-    </nav>
-
-    <div class="container-fluid">
-        <h1 class="mt-4">Hasil Penerimaan Siswa Baru SDN Mojotengah 2</h1><br>
+            <div id="layoutSidenav_content">
+                <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Hasil Penerimaan Siswa Baru SDN Mojotengah 2</h1><br>
         <div class="col-lg-12"> <br>
             <div class="card">
                 <div class="card-header text-center">
@@ -81,6 +85,7 @@
                     <td><?php echo $d['status']; ?></td>
                     <td>
                         <a href="edit-penerimaan.php?id_pendaftaran=<?php echo $d['id_pendaftaran']; ?>" class="btn btn-warning">Edit</a>
+                        <a href="detail_pendaftaran.php?id_pendaftaran=<?php echo $d['id_pendaftaran']; ?>" class="btn btn-info">Lihat</a>
                     </td>
                 </tr>
                 <?php
@@ -92,6 +97,22 @@
             </div>
         </div>
       </div>
-    </div>
-</body>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; by Kelompok 10 - Shafa Venina</div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+    </body>
 </html>

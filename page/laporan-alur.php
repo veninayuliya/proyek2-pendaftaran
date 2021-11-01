@@ -1,6 +1,6 @@
 <?php
     include "../koneksi.php";
-    $laporan = "SELECT nama_kegiatan, pelaksanaan, keterangan, FROM alur-pendaftaran";
+    $laporan = "SELECT nama_kegiatan, pelaksanaan, keterangan FROM alur_pendaftaran";
     $hasil = mysqli_query($koneksi,$laporan);
     $data = array();
     while($row = mysqli_fetch_assoc($hasil)){
@@ -10,8 +10,8 @@
     $tgl= "Update : ".date("l, d F Y");
     $header= array(
         array("label"=>"Nama Kegiatan", "length"=>40, "align"=>"L"),
-        array("label"=>"Waktu Pelaksanaan", "length"=>50, "align"=>"L"),
-        array("label"=>"Keterangan", "length"=>60, "align"=>"L"),
+        array("label"=>"Waktu Pelaksanaan", "length"=>35, "align"=>"L"),
+        array("label"=>"Keterangan", "length"=>100, "align"=>"L"),
     );
     require ("../fpdf16/fpdf.php");
     $pdf = new FPDF();

@@ -50,34 +50,42 @@ include '../koneksi.php';
     <div class="container">
         <?php
         $id_alur = ($_GET['id_alur']);
-
-        $query = "SELECT * FROM alur-pendaftaran WHERE id_alur='$id_alur'";
+        $query = "SELECT * FROM alur_pendaftaran WHERE id_alur='$id_alur'";
         $result = mysqli_query($koneksi, $query);
         $d = mysqli_fetch_array($result);
         ?>
-	  <form method="POST" enctype="multipart/form-data" action="../page/proses-edit-alur.php">
+	  <form method="POST">
             <div class="form-grup">
                 <label>Nama Kegiatan</label><br>
-                <input type="text" name="nama_kegiatan" placeholder="Masukkan nama kegiatan" class="form-control" required value="<?php echo $d['nama_kegiatan'];?>"><br>
+                <input type="text" name="nama_kegiatan" class="form-control" required value="<?php echo $d['nama_kegiatan'];?>"><br>
             </div>
             <div class="form-group">
                 <label>Tanggal Pelaksanaan</label><br>
-                <input type="text" name="pelaksanaan" placeholder="Masukkan waktu pelaksanaan (dd-mm-yyyyy)" class="form-control" required value="<?php echo $d['pelaksanaan'];?>"><br>
+                <input type="text" name="pelaksanaan" class="form-control" required value="<?php echo $d['pelaksanaan'];?>">
             </div>
             <div class="form-group">
                 <label>Keterangan</label><br>
-                <textarea name="keterangan" placeholder="Masukkan keterangan kegiatan" style="border-radius:5px;width:615px;height:200px;" required value="<?php echo $d['keterangan'];?>">
-                </textarea>
+                <input type="text" name="keterangan" class="form-control" required value="<?php echo $d['keterangan'];?>">
             </div>
-
+            
+            <a href="alur-pendaftaran.php" class="btn btn-default">Kembali</a>
             <button type="submit" class="btn btn-primary" name="update">Update</button><br><br>
         </form>
+        <?php
+        if(isset(($_POST['update'])))
+        {
+            mysqli_query($koneksi,"UPDATE alur_pendaftaran SET nama_kegiatan='$_POST[nama_kegiatan]',pelaksanaan='$_POST[pelaksanaan]',keterangan='$_POST[keterangan]' WHERE id_alur='$GET[id_alur]'");	
+
+            echo "<script>alert('Data telah diupdate');</script>";
+            echo "<script>location='alur_pendaftaran.php';</script>";
+        }
+        ?>
     </div>
   </div>
-  <footer class="py-5 bg-dark">
+  <!-- <footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Kelompok 10</p>
     </div>
-  </footer>
+  </footer> -->
 </body>
 </html>

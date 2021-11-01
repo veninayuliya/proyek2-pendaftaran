@@ -28,10 +28,10 @@
                         <a class="nav-link" href="home-panitia.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="alur_pendaftaran.php">Kelola Alur</a>
+                        <a class="nav-link" href="alur_pendaftaran.php">Kelola Alur</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="penerimaan.php">Penerimaan</a>
+                        <a class="nav-link active" href="penerimaan.php">Penerimaan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Logout</a>

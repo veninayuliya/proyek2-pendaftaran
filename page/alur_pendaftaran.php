@@ -68,7 +68,8 @@
                 <?php
                 include '../koneksi.php';
                 $no=1;
-                $data=mysqli_query($koneksi,"SELECT * FROM alur-pendaftaran");
+                $sql = "SELECT * FROM alur_pendaftaran;";
+                $data=mysqli_query($koneksi,$sql) or die(mysqli_error($koneksi));
                 while($d=mysqli_fetch_array($data)){
                 ?>
                 <tr>
@@ -78,7 +79,25 @@
                     <td><?php echo $d['keterangan']; ?></td>
                     <td>
                         <a href="edit-alur.php?id_alur=<?php echo $d['id_alur']; ?>" class="btn btn-warning">Edit</a>
-                        <a href="hapus-alur.php?id_alur=<?php echo $d['id_alur']; ?>" class="btn btn-danger">Hapus</a>
+                        <a href="hapus-alur.php?id_alur=<?php echo $d['id_alur']; ?>" class="btn btn-danger" onclick="javascript: return confirm('Anda yakin akan menghapus ?')">Hapus</a>
+                        <script>
+                            $(".hapus").click(function () {
+                                var jawab = confirm("Press a button!");
+                                if (jawab === true) {
+                                    var hapus = false;
+                                    if (!hapus) {
+                                        hapus = true;
+                                        $.post('hapus-data.php', {id: $(this).attr('nomor_surat')},
+                                        function (data) {
+                                            alert(data);
+                                        });
+                                        hapus = false;
+                                    }
+                                } else {
+                                    return false;
+                                }
+                            });
+                        </script>
                     </td>
                 </tr>
                 <?php

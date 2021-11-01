@@ -48,7 +48,7 @@ include '../koneksi.php';
   <div class="col-md-6">
     <h3 class="my-4">Alur Pendaftaran Siswa Baru SDN Mojotengah 2</h3>
     <div class="container">
-	  <form method="POST" enctype="multipart/form-data" action="../page/proses-tambah-alur.php">
+	  <form method="POST">
             <div class="form-grup">
                 <label>Nama Kegiatan</label><br>
                 <input type="text" name="nama_kegiatan" placeholder="Masukkan nama kegiatan" class="form-control" required><br>
@@ -59,19 +59,28 @@ include '../koneksi.php';
             </div>
             <div class="form-group">
                 <label>Keterangan</label><br>
-                <textarea name="keterangan" placeholder="Masukkan keterangan kegiatan" style="border-radius:5px;width:615px;height:200px;" required>
-                </textarea>
+                <input type="text" name="keterangan" placeholder="Masukkan keterangan kegiatan" class="form-control" required>
             </div>
-
             <button type="submit" class="btn btn-primary" name="submit">Tambah</button><br><br>
         </form>
+        <?php
+        if(isset(($_POST['submit'])))
+        {
+            mysqli_query($koneksi,"INSERT INTO alur_pendaftaran (nama_kegiatan,pelaksanaan,keterangan) 
+            VALUES('$_POST[nama_kegiatan]','$_POST[pelaksanaan]','$_POST[keterangan]')");
+
+            echo "<script>alert('Data alur pendaftaran telah ditambahkan');</script>";
+            echo "<script>location='alur_pendaftaran.php';</script>";
+        }
+        ?>
+
 
     </div>
   </div>
-  <footer class="py-5 bg-dark">
+  <!-- <footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Kelompok 10</p>
     </div>
-  </footer>
+  </footer> -->
 </body>
 </html>
