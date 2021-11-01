@@ -60,21 +60,90 @@ include '../koneksi.php';
                         $d = mysqli_fetch_array($result);
                         ?>
                         <form method="POST" enctype="multipart/form-data">
+                            <h4>IDENTITAS SISWA</h4>
                             <div class="form-grup">
                                 <label>Nama Siswa</label><br>
                                 <input type="text" name="nama_lengkap" class="form-control" readonly value="<?php echo $d['nama_lengkap'];?>"><br>
+                            </div>
+                            <div class="form-group">
+                                <label>Jenis Kelamin</label><br>
+                                <input type="text" name="jenis_kelamin" class="form-control" readonly value="<?php echo $d['jenis_kelamin'];?>"><br>
                             </div>
                             <div class="form-group">
                                 <label>TTL</label><br>
                                 <input type="text" name="ttl" class="form-control" readonly value="<?php echo $d['ttl'];?>"><br>
                             </div>
                             <div class="form-group">
-                                <label>Asal Sekolah</label><br>
+                                <label>Agama</label><br>
                                 <input type="text" name="agama" class="form-control" readonly value="<?php echo $d['agama'];?>"><br>
+                            </div>
+                            <div class="form-group">
+                                <label>Alamat</label><br>
+                                <input type="text" name="alamat" class="form-control" readonly value="<?php echo $d['alamat'];?>"><br>
                             </div>
                             <div class="form-group">
                                 <label>Asal Sekolah</label><br>
                                 <input type="text" name="sekolah_asal" class="form-control" readonly value="<?php echo $d['sekolah_asal'];?>"><br>
+                            </div>
+                            <div class="form-group">
+                                <label>Nomor Induk Kependudukan</label><br>
+                                <input type="text" name="nik" class="form-control" readonly value="<?php echo $d['nik'];?>"><br>
+                            </div>
+                            <div class="form-group">
+                                <label>Nomor Akta Kelahiran</label><br>
+                                <input type="text" name="no_akta_lahir" class="form-control" readonly value="<?php echo $d['no_akta_lahir'];?>"><br>
+                            </div>
+                            <div class="form-group">
+                                <label>Nomor Telepon</label><br>
+                                <input type="text" name="telepon" class="form-control" readonly value="<?php echo $d['telepon'];?>"><br>
+                            </div><br>
+                            <h4>DATA PERIODIK</h4>
+                            <div class="form-group">
+                                <label>Tinggi Badan (cm)</label><br>
+                                <input type="text" name="tb_siswa" class="form-control" readonly value="<?php echo $d['tb_siswa'];?>"><br>
+                            </div>
+                            <div class="form-group">
+                                <label>Berat Badan (kg)</label><br>
+                                <input type="text" name="bb_siswa" class="form-control" readonly value="<?php echo $d['bb_siswa'];?>"><br>
+                            </div>
+                            <div class="form-group">
+                                <label>Jarak Rumah ke Sekolah (km)</label><br>
+                                <input type="text" name="jarak" class="form-control" readonly value="<?php echo $d['jarak'];?>"><br>
+                            </div><br>
+                            <h4>DATA AYAH KANDUNG</h4>
+                            <div class="form-group">
+                                <label>Nama Ayah</label><br>
+                                <input type="text" name="nama_ayah" class="form-control" readonly value="<?php echo $d['nama_ayah'];?>"><br>
+                            </div>
+                            <div class="form-group">
+                                <label>NIK Ayah</label><br>
+                                <input type="text" name="nik_ayah" class="form-control" readonly value="<?php echo $d['nik_ayah'];?>"><br>
+                            </div>
+                            <div class="form-group">
+                                <label>Pekerjaan Ayah</label><br>
+                                <input type="text" name="pekerjaan_ayah" class="form-control" readonly value="<?php echo $d['pekerjaan_ayah'];?>"><br>
+                            </div>
+                            <div class="form-group">
+                                <label>Pendidikan Ayah</label><br>
+                                <input type="text" name="pend_ayah" class="form-control" readonly value="<?php echo $d['pend_ayah'];?>"><br>
+                            </div><br>
+                            <h4>DATA IBU KANDUNG</h4>
+                            <div class="form-group">
+                                <label>Nama Ibu</label><br>
+                                <input type="text" name="nama_ibu" class="form-control" readonly value="<?php echo $d['nama_ibu'];?>"><br>
+                            </div>
+                            <div class="form-group">
+                                <label>Pekerjaan Ibu</label><br>
+                                <input type="text" name="pekerjaan_ibu" class="form-control" readonly value="<?php echo $d['pekerjaan_ibu'];?>"><br>
+                            </div>
+                            <div class="form-group">
+                                <label>Pendidikan Ibu</label><br>
+                                <input type="text" name="pend_ibu" class="form-control" readonly value="<?php echo $d['pend_ibu'];?>"><br>
+                            </div><br>
+                            <h4>LAIN-LAIN</h4>
+                            <div class="form-group">
+                                <label>Foto 3x4</label><br>
+                                <input type="file" name="foto" class="form-control" readonly value="<?php echo $d['foto'];?>"><br>
                             </div>
                             <div class="form-group">
                                 <label>Status</label><br>
