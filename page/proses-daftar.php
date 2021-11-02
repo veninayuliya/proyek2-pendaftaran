@@ -7,7 +7,7 @@ $sekolah_asal   = $_POST['sekolah_asal'];
 $ttl            = $_POST['ttl'];
 $jenis_kelamin  = $_POST['jenis_kelamin'];
 $agama          = $_POST['agama'];
-$alamat         = $_POST['al<?amat'];
+$alamat         = $_POST['alamat'];
 $telepon        = $_POST['telepon'];
 $no_akta_lahir  = $_POST['no_akta_lahir'];
 $tb_siswa       = $_POST['tb_siswa'];
@@ -46,7 +46,7 @@ if($foto != ""){
                 '$pekerjaan_ibu', '$pend_ibu'
             )";
         if(mysqli_query($koneksi, $query)){
-            echo "<script>alert('Berhasil melakukan pendaftaran');window.location='../page/formulir.php';</script>";
+            echo "<script>alert('Berhasil melakukan pendaftaran');window.location='../page/penerimaan.php';</script>";
         } else {
             echo "<script>alert('Cant run Query');window.location='../page/pendaftaran.php';</script>". mysqli_error($koneksi);
         }

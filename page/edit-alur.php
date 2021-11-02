@@ -74,8 +74,8 @@ include '../koneksi.php';
         <?php
         if(isset(($_POST['update'])))
         {
-            mysqli_query($koneksi, "UPDATE alur_pendaftaran SET nama_kegiatan='$_POST[nama_kegiatan]', pelaksanaan='$_POST[pelaksanaan]', keterangan='$_POST[keterangan]'
-            WHERE id_alur='$_POST[id_alur]'");
+            mysqli_query($koneksi,"UPDATE alur_pendaftaran SET nama_kegiatan='$_POST[nama_kegiatan]', pelaksanaan='$_POST[pelaksanaan]', keterangan='$_POST[keterangan]'
+            WHERE id_alur='$_GET[id_alur]'");
             echo "<script>alert('Data telah diupdate');</script>";
             echo "<script>location='alur_pendaftaran.php';</script>";
         }

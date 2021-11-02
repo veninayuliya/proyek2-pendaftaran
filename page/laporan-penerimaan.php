@@ -10,10 +10,10 @@
     $tgl= "Update : ".date("l, d F Y");
     $header= array(
         array("label"=>"Nama Siswa", "length"=>40, "align"=>"L"),
-        array("label"=>"Jenis Kelamin", "length"=>35, "align"=>"L"),
+        array("label"=>"Jenis Kelamin", "length"=>25, "align"=>"L"),
         array("label"=>"TTL", "length"=>40, "align"=>"L"),
-        array("label"=>"Alamat", "length"=>40, "align"=>"L"),
-        array("label"=>"Status", "length"=>30, "align"=>"L")
+        array("label"=>"Alamat", "length"=>50, "align"=>"L"),
+        array("label"=>"Status", "length"=>35, "align"=>"L")
     );
     require ("../fpdf16/fpdf.php");
     $pdf = new FPDF();
