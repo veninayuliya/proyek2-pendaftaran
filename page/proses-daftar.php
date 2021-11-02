@@ -46,7 +46,7 @@ if($foto != ""){
                 '$pekerjaan_ibu', '$pend_ibu'
             )";
         if(mysqli_query($koneksi, $query)){
-            echo "<script>alert('Berhasil melakukan pendaftaran');window.location='../page/penerimaan.php';</script>";
+            echo "<script>alert('Berhasil melakukan pendaftaran. Silakan cek alur pendaftaran yang terdapat pada halaman home untuk informasi lebih lanjut');window.location='../page/home.php';</script>";
         } else {
             echo "<script>alert('Cant run Query');window.location='../page/pendaftaran.php';</script>". mysqli_error($koneksi);
         }

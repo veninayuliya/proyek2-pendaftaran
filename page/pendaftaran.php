@@ -49,7 +49,7 @@
   <div class="col-md-6">
     <h3 class="my-4">Formulir Pendaftaran Siswa Baru SDN Mojotengah 2</h3>
     <div class="container">
-	<form method="POST" enctype="multipart/form-data" action="../page/proses-daftar.php">
+	<form method="POST" enctype="multipart/form-data">
             <h4>IDENTITAS SISWA</h4>
             <div class="form-grup">
                 <label>Nama Lengkap</label><br>
@@ -178,6 +178,28 @@
 
             <button type="submit" class="btn btn-primary" name="submit">Submit</button><br><br>
         </form>
+        <?php
+
+        if(isset(($_POST['submit'])))
+        {
+            $nama = $_FILES['foto']['name'];
+            $lokasi = $_FILES['foto']['tmp_name'];
+            move_uploaded_file($lokasi, "../img/".$nama);
+            $koneksi->query("INSERT INTO pendaftaran (
+                nama_lengkap, foto, jenis_kelamin, ttl, nik, no_akta_lahir, agama, sekolah_asal,
+                alamat, telepon, tb_siswa, bb_siswa, jml_saudara, jarak, nama_ayah, nik_ayah, pekerjaan_ayah,
+                pend_ayah, nama_ibu, nik_ibu, pekerjaan_ibu, pend_ibu
+                ) VALUES (
+                    '$_POST[nama_lengkap]', '$nama', '$_POST[jenis_kelamin]', '$_POST[ttl]', '$_POST[nik]',
+                    '$_POST[no_akta_lahir]', '$_POST[agama]', '$_POST[sekolah_asal]', '$_POST[alamat]', '$_POST[telepon]',
+                    '$_POST[tb_siswa]', '$_POST[bb_siswa]', '$_POST[jml_saudara]', '$_POST[jarak]', '$_POST[nama_ayah]',
+                    '$_POST[nik_ayah]', '$_POST[pekerjaan_ayah]', '$_POST[pend_ayah]', '$_POST[nama_ibu]', '$_POST[nik_ibu]',
+                    '$_POST[pekerjaan_ibu]', '$_POST[pend_ibu]'
+                )");
+
+            echo "<script>alert('Berhasil melakukan pendaftaran. Silakan cek alur pendaftaran yang terdapat pada halaman home untuk informasi lebih lanjut');window.location='../page/home.php';</script>";
+        }
+        ?>
 
     </div>
   </div>

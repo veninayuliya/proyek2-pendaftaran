@@ -43,9 +43,9 @@ include '../koneksi.php';
 				else
 				{
 					//insert ke tabel user
-					mysqli_query($db,"INSERT INTO users(email_user, password_user, nama_user, roles) VALUES ('$email','$password','$nama','$roles')");
+					mysqli_query($koneksi,"INSERT INTO users(email_user, password_user, nama_user, roles) VALUES ('$email','$password','$nama','$roles')");
 					echo "<script>alert('Registrasi SUKSES. Silahkan login');</script>";
-					echo "<script>location='login.php';</script>";
+					echo "<script>location='../index.php';</script>";
 				}
 			}
 			?>
