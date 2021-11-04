@@ -71,7 +71,7 @@ include '../koneksi.php';
             <div class="form-group">
                 <label>Status</label><br>
                 <select class="form-control" name="status">
-                    <option value="<?php echo $d['status'];?>"><?php echo $d['status'];?></option>
+                    <option value="Sudah Terdaftar" selected disabled hidden>Sudah Terdaftar</option>
                     <option value="Tidak Diterima">Tidak Diterima</option>
                     <option value="Diterima">Diterima</option>
                 </select>
