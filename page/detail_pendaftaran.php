@@ -107,6 +107,10 @@ include '../koneksi.php';
                                 <input type="text" name="bb_siswa" class="form-control" readonly value="<?php echo $d['bb_siswa'];?>"><br>
                             </div>
                             <div class="form-group">
+                                <label>Jumlah Saudara</label><br>
+                                <input type="number" name="jml_saudara" class="form-control" readonly value="<?php echo $d['jml_saudara'];?>"><br>
+                            </div>
+                            <div class="form-group">
                                 <label>Jarak Rumah ke Sekolah (km)</label><br>
                                 <input type="text" name="jarak" class="form-control" readonly value="<?php echo $d['jarak'];?>"><br>
                             </div><br>
@@ -133,6 +137,10 @@ include '../koneksi.php';
                                 <input type="text" name="nama_ibu" class="form-control" readonly value="<?php echo $d['nama_ibu'];?>"><br>
                             </div>
                             <div class="form-group">
+                                <label>NIK Ibu</label><br>
+                                <input type="text" name="nik_ibu" class="form-control" readonly value="<?php echo $d['nik_ibu'];?>"><br>
+                            </div>
+                            <div class="form-group">
                                 <label>Pekerjaan Ibu</label><br>
                                 <input type="text" name="pekerjaan_ibu" class="form-control" readonly value="<?php echo $d['pekerjaan_ibu'];?>"><br>
                             </div>
@@ -143,7 +151,7 @@ include '../koneksi.php';
                             <h4>LAIN-LAIN</h4>
                             <div class="form-group">
                                 <label>Foto 3x4</label><br>
-                                <img src="../img/<?php echo $d['foto'];?>">
+                                <img src="../img/<?php echo $d['foto'];?>" style="width:354px; height:472px;">
                             </div>
                             <div class="form-group">
                                 <label>Status</label><br>

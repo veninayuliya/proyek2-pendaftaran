@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Hasil Penerimaan</title>
+  <title>Data Pendaftar</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -42,11 +42,11 @@
     </nav>
 
     <div class="container-fluid">
-        <h1 class="mt-4" style="text-align:center;">Hasil Penerimaan Siswa Baru SDN Mojotengah 2</h1><br>
+        <h1 class="mt-4" style="text-align:center;">Daftar Calon Siswa Baru SDN Mojotengah 2</h1><br>
         <div class="col-lg-12"> <br>
             <div class="card">
                 <div class="card-header text-center">
-                    <h3>Hasil Penerimaan</h3>
+                    <h3>Data Pendaftar</h3>
                 </div>
                 </br></br>
             </div>

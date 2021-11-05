@@ -87,7 +87,7 @@
                                     var hapus = false;
                                     if (!hapus) {
                                         hapus = true;
-                                        $.post('hapus-data.php', {id: $(this).attr('nomor_surat')},
+                                        $.post('hapus-alur.php', {id: $(this).attr('id_alur')},
                                         function (data) {
                                             alert(data);
                                         });
