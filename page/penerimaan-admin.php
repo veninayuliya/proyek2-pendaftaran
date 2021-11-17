@@ -59,10 +59,9 @@
             <div class="card body">
                 <table class="table table-bordered table-striped">
                 <thead>
-                    <tr>
+                    <tr style="text-align:center;">
                         <th>No</th>
                         <th>Nama Siswa</th>
-                        <th>TTL</th>
                         <th>Jenis Kelamin</th>
                         <th>Asal Sekolah</th>
                         <th>Status</th>
@@ -73,13 +72,12 @@
                 <?php
                 include '../koneksi.php';
                 $no=1;
-                $data=mysqli_query($koneksi,"SELECT * FROM pendaftaran");
+                $data=mysqli_query($koneksi,"SELECT * FROM pendaftaran ORDER BY nama_lengkap ASC");
                 while($d=mysqli_fetch_array($data)){
                 ?>
                 <tr>
-                    <td><?php echo $no++; ?></td>
+                    <td style="text-align:center;"><?php echo $no++; ?></td>
                     <td><?php echo $d['nama_lengkap']; ?></td>
-                    <td><?php echo $d['ttl']; ?></td>
                     <td><?php echo $d['jenis_kelamin']; ?></td>
                     <td><?php echo $d['sekolah_asal']; ?></td>
                     <td><?php echo $d['status']; ?></td>

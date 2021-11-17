@@ -83,7 +83,7 @@
             <div class="card body">
                 <table class="table table-bordered table-striped">
                 <thead>
-                    <tr>
+                    <tr style="text-align:center;">
                         <th>No</th>
                         <th>Nama Kegiatan</th>
                         <th>Pelaksanaan</th>
@@ -99,7 +99,7 @@
                 while($d=mysqli_fetch_array($data)){
                 ?>
                 <tr>
-                    <td><?php echo $no++; ?></td>
+                    <td style="text-align:center;"><?php echo $no++; ?></td>
                     <td><?php echo $d['nama_kegiatan']; ?></td>
                     <td><?php echo $d['pelaksanaan']; ?></td>
                     <td><?php echo $d['keterangan']; ?></td>
