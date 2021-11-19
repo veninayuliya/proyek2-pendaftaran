@@ -40,49 +40,30 @@
             </div>
         </div>
     </nav>
+    <?php
+        include '../koneksi.php';
+        $no=1;
+        $data=mysqli_query($koneksi,"SELECT * FROM pendaftaran ORDER BY id_pendaftaran DESC LIMIT 1");
+        while($d=mysqli_fetch_array($data)){
+    ?>
+
 
     <div class="container-fluid">
-        <h1 class="mt-4" style="text-align:center;">Daftar Calon Siswa Baru SDN Mojotengah 2</h1><br>
-        <div class="col-lg-12"> <br>
-            <div class="card">
-                <div class="card-header text-center">
-                    <h3>Data Pendaftar</h3>
-                </div>
-                </br></br>
-            </div>
-            <!-- Title -->
+        <div class="col-lg-10"> <br>
             <div class="card body">
-                <table class="table table-bordered table-striped">
-                <thead>
-                    <tr style="text-align:center;">
-                        <th>No</th>
-                        <th>Nama Siswa</th>
-                        <th>Jenis Kelamin</th>
-                        <th>Asal Sekolah</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php
-                include '../koneksi.php';
-                $no=1;
-                $data=mysqli_query($koneksi,"SELECT * FROM pendaftaran ORDER BY nama_lengkap ASC");
-                while($d=mysqli_fetch_array($data)){
-                ?>
-                <tr>
-                    <td style="text-align:center;"><?php echo $no++; ?></td>
-                    <td><?php echo $d['nama_lengkap']; ?></td>
-                    <td><?php echo $d['jenis_kelamin']; ?></td>
-                    <td><?php echo $d['sekolah_asal']; ?></td>
-                    <td><?php echo $d['status']; ?></td>
-                </tr>
-                <?php
-                }
-                ?>
-                </tbody>
-                </table>
-                </br></br>
+                <div class="container" style="margin:30px;text-align:justify;display:grid;">
+                    <img src="../img/<?php echo $d['foto'];?>" style="width:180px; height:250px;">
+                    <p><b>Nama</b>: <?php echo $d['nama_lengkap']; ?></p>
+                    <p><b>Jenis Kelamin</b>: <?php echo $d['jenis_kelamin']; ?></p>
+                    <p><b>Asal Sekolah</b>: <?php echo $d['sekolah_asal']; ?></p>
+                </div>
+            </div><br>
+            <div class="alert alert-info">
+                    <p>Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <b><?php echo $d['status']; ?></b></p>
             </div>
+            <?php
+                }
+            ?>
         </div>
       </div>
     </div>

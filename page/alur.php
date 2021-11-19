@@ -1,3 +1,7 @@
+<?php
+date_default_timezone_set('Asia/Jakarta');
+$tgl= date("d/m/Y h:i:s");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,55 +51,28 @@
   </nav>
   <div class="container">
       <div class="col-lg-12"> <br>
-            <div class="card">
-                <div class="card-header text-center">
-                    <h3>Alur Pendaftaran</h3>
-                </div></br></br>
-            </div>
-            <!-- Title -->
-            <div class="card body">
-                <table class="table table-bordered table-striped">
-                <thead>
-                    <tr style="text-align:center;">
-                        <th>No</th>
-                        <th>Nama Kegiatan</th>
-                        <th>Pelaksanaan</th>
-                        <th>Keterangan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php
-                include '../koneksi.php';
-                $no=1;
-                $sql = "SELECT * FROM alur_pendaftaran;";
-                $data=mysqli_query($koneksi,$sql) or die(mysqli_error($koneksi));
-                while($d=mysqli_fetch_array($data)){
-                ?>
-                <tr>
-                    <td style="text-align:center;"><?php echo $no++; ?></td>
-                    <td><?php echo $d['nama_kegiatan']; ?></td>
-                    <td><?php echo $d['pelaksanaan']; ?></td>
-                    <td><?php echo $d['keterangan']; ?></td>
-                </tr>
-                <?php
-                }
-                ?>
-                </tbody>
-                </table>
-                </br></br>
-            </div>
-        </div><br><br>
+      
+      <!-- <div class="card mb-4"> -->
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12">
+          <div class="alert alert-success">
+	        <h6>Pendaftaran Telah Berhasil Direkam pada <?php echo $tgl ?></h6>
+            <p>Status Anda saat ini adalah <b> Sudah Terdaftar </b></p>
+          </div>
+            <!-- <h2 class="card-title">Thanks for joining our course!</h2> -->
+            <p class="card-text">* Tes Tulis dilaksanakan  secara offline pada tanggal <b>2 Juli 2021</b> pukul <b>08.00 - 10.00</b>.</p>
+            <p class="card-text">** Pengumuman hasil penerimaan siswa baru dapat dilihat pada menu Penerimaan pada tanggal <b> 8 Juli 2021 </b> dengan keterangan status <b>Diterima/Tidak Diterima </b>.</p>
+          </div>
+        </div><br>
+        <a href="penerimaan.php" class="btn btn-info">Ke Halaman Penerimaan</a>
+        <a href="logout.php" class="btn btn-secondary">Logout</a>
+      </div>
+    <!-- </div> -->
     <hr>
   </div>
   <!-- /.container -->
 
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Kelompok 10 </p>
-    </div>
-    <!-- /.container -->
-  </footer>
 
   <!-- Bootstrap core JavaScript -->
   <script src="../vendor/jquery/jquery.min.js"></script>

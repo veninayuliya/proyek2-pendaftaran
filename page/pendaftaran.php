@@ -199,7 +199,7 @@
                         '$_POST[nik_ayah]', '$_POST[pekerjaan_ayah]', '$_POST[pend_ayah]', '$_POST[nama_ibu]', '$_POST[nik_ibu]',
                         '$_POST[pekerjaan_ibu]', '$_POST[pend_ibu]', '$status'
                     )");
-                echo "<script>alert('Berhasil melakukan pendaftaran. Silakan cek alur pendaftaran untuk informasi lebih lanjut');window.location='../page/alur.php';</script>";
+                echo "<script>alert('Berhasil melakukan pendaftaran.');window.location='../page/alur.php';</script>";
             } else {
                 echo "<script>alert('Masukkan foto dengan ukuran dibawah 100mb');window.location='../page/pendaftaran.php;</script>'";
             }
